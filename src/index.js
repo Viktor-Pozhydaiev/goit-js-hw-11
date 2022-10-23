@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Notify } from 'notiflix';
+import commom from './styles/commom.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
