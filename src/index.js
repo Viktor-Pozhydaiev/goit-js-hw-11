@@ -4,6 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import fotoCard from './templates/foto-card.hbs';
 import SearchService from './js/search-service';
+import { data } from 'infinite-scroll';
 
 const refs = {
   searchButton: document.querySelector('button'),
@@ -60,11 +61,13 @@ const onEntry = entries => {
         }
         createMarkup(data.hits);
         return Notify.success(`Hooray! We found ${data.totalHits} images.`);
+
         searchService.addPage();
       });
     }
   });
 };
+
 //scroll
 const elements = {};
 const observer = new IntersectionObserver(onEntry, elements);
