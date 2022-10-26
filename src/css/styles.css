@@ -1,0 +1,114 @@
+.search-form {
+  z-index: 999;
+  height: 50px;
+  width: 100%;
+  background-color: #4242bae6;
+  align-items: center;
+  transition: top 0.15s linear;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 6px #00000080;
+}
+.search-form input {
+  border-radius: 4px;
+  padding: 5px;
+}
+.btn-styles {
+  margin-left: 50px;
+  padding: 5px 10px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  border-style: unset;
+}
+.btn-styles:hover,
+.btn-styles:focus {
+  cursor: pointer;
+  background: #2196f3;
+  color: #ffffff;
+}
+/* .load-more {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-width: 100px;
+  padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.09em;
+  border-style: unset;
+}
+.load-more:hover,
+.load-more:focus {
+  cursor: pointer;
+  background: #2196f3;
+  color: #ffffff;
+} */
+
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+.photo-card {
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  margin: 10px;
+  transition: box-shadow 0.15s linear;
+  overflow: hidden;
+  box-shadow: 0 2px 5px -1px #32325d40, 0 1px 3px -1px #0000004d;
+}
+.info {
+  color: #000;
+  border-top: none;
+  justify-content: space-around;
+  align-self: center;
+  padding: 10px;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+.img-wrapper {
+  overflow: hidden;
+}
+.info-item {
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+}
+.gallery {
+  display: grid;
+  max-width: 1140px;
+  grid-template-columns: repeat(4, 350px);
+  /* grid-auto-rows: 240px; */
+  grid-gap: 10px;
+  margin-top: 50px;
+  align-content: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery__image:hover {
+  transform: scale(1.03);
+}
+
+.gallery__image {
+  height: 300px;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.gallery__link {
+  text-decoration: none;
+  /* height: 100%; */
+}
+
+.gallery__link:hover {
+  cursor: zoom-in;
+}
