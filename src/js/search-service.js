@@ -1,3 +1,6 @@
+import axios from 'axios';
+const axios = require('axios').default;
+
 const options = {
   BASE_URL: 'https://pixabay.com/api/',
   KEY: '30766085-b4f368f4aeb8dd702f746c591',
@@ -14,11 +17,18 @@ export default class SearchService {
   async searchFotos() {
     const url = `${options.BASE_URL}?key=${options.KEY}&q=${this.searchQery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
 
-    return await fetch(url)
-      .then(response => response.json())
-      .then(data => {
+    return await axios
+      .get(url)
+      .then(response => {
         this.addPage();
-        return data;
+
+        return response.data;
+      })
+      .catch(error => {
+        console.error(error);
+      })
+      .finally(response => {
+        console.log('Your code works :-)');
       });
   }
   addPage() {

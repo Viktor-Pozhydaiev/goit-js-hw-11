@@ -1,10 +1,10 @@
 import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
+
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import fotoCard from './templates/foto-card.hbs';
 import SearchService from './js/search-service';
-import { data } from 'infinite-scroll';
 
 const refs = {
   searchButton: document.querySelector('button'),
@@ -23,7 +23,7 @@ function onSubmit(e) {
   e.preventDefault();
   reloadSearch();
   searchService.query = e.currentTarget.elements.searchQuery.value;
-
+  // || data.hits.length === 0
   searchService.resetPage();
   searchService.searchFotos().then(data => {
     if (searchService.query === '' || data.hits.length === 0) {
